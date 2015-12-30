@@ -47,20 +47,17 @@ int main(int argc, const char * argv[]) {
     
     int pcaDimArray[3] = {15,20,25};
     int kArray[3] = {50,100,150};
-    int kNNArray[3] = {3,10,20};
-    
+    int kNNArray[3] = {3,10,20};    
 
     //2)
     PCA pcaSift;
     SIFT siftExtractor;
     Mat descriptorsOfTrainImages[N_OF_TRAINING_IMAGES]; //SIFT descriptor matrix for each training image
-    
-    
+        
     //Get codewords
     Mat codewords = aux::getWords(trainImages, descriptorsOfTrainImages,
                                   pcaSift, siftExtractor, pcaDimension, numberOfClusters); //Returns the cluster means (codewords)
-    
-    
+        
     //Get the histograms of training images
     Mat trainingHistogramData;
     for(int i=0; i<N_OF_TRAINING_IMAGES; i++){
