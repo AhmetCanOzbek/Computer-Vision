@@ -75,15 +75,9 @@ int main(int argc, const char * argv[]) {
     trainingHistogramData.convertTo(trainingHistogramData, CV_32F);
     testingHistogramData.convertTo(testingHistogramData, CV_32F);
     
-    
-//    //FOR REPORT START
-//    cout << "Histogram: \n" << trainingHistogramData.row(trainingHistogramData.rows - 5) << endl;
-//    waitKey();
-//    //FOR REPORT END
    
     //Classification
-    //KNN
-    
+    //KNN    
     cout << "KNN Classification with parameters: " << endl;
     cout << "*PCA dimension: " << pcaDimension << endl;
     cout << "*k(Number Of Clusters in k-means): " << numberOfClusters << endl;
@@ -91,8 +85,7 @@ int main(int argc, const char * argv[]) {
     
     //Train kNN classifier
     CvKNearest knnClassifier;
-    knnClassifier.train(trainingHistogramData, trueTrainLabels);
-    
+    knnClassifier.train(trainingHistogramData, trueTrainLabels);    
     
     //Results
     cout << "Results: " << endl;
@@ -117,7 +110,6 @@ int main(int argc, const char * argv[]) {
     Mat confusionMatrixTest;
     confusionMatrixTest = aux::getConfusionMatrix(trueTestLabels, predictedTestingLabelsKNN, N_OF_CLASSES);
     cout << "-Testing Confusion Matrix: \n" << confusionMatrixTest << endl;
-
     
     cout << "End." << endl;
     return 0;
