@@ -79,34 +79,27 @@ Mat aux::getWords(Mat* trainImages, Mat* descriptorsOfTrainImages, PCA& pcaSIFT,
     
     //SIFT feature extraction
     //Get descriptors of training images
-    vector<KeyPoint> keyPoints;
-    //cout << "Extracting SIFT features of training images: Begin." << endl;
+    vector<KeyPoint> keyPoints;    
     for(int i=0; i<N_OF_TRAINING_IMAGES; i++){
         siftExtractor.operator()(trainImages[i], noArray(), keyPoints, descriptorsOfTrainImages[i]);
-    }
-    //cout << "Extracting SIFT features of training images: End." << endl;
-    
-   
+    }   
     
     //Merge all SIFT features from all training images to apply PCA
     Mat mergedTrainDescriptors;
     vconcat(descriptorsOfTrainImages, N_OF_TRAINING_IMAGES, mergedTrainDescriptors);
-    
-    
+        
     //Apply PCA to merged SIFT descriptors of all training images    
     pcaSIFT = PCA(mergedTrainDescriptors, Mat(), 0, pcaDimension);
     Mat projectedMergedTrainDescriptors;
     pcaSIFT.project(mergedTrainDescriptors, projectedMergedTrainDescriptors);
-    
-    
+        
     //k-means clustering merged SIFT features of all training images
     Mat labels;
     int attempts = 5;
     Mat clusterMeans;
-    //cout << "k-means clustering: Start" << endl;
     kmeans(projectedMergedTrainDescriptors, numberOfClusters, labels, TermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 10000, 0.0001), attempts, KMEANS_PP_CENTERS,
            clusterMeans);
-    //cout << "k-means clustering: End" << endl;
+    
     
     return clusterMeans;
 }
