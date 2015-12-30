@@ -1,6 +1,3 @@
-//CSCI574 HW5
-//Ahmet Can Ozbek
-//8401860152
 #include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>

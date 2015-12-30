@@ -1,7 +1,3 @@
-//CSCI574 HW5
-//Ahmet Can Ozbek
-//8401860152
-
 #include "auxFunctions.h"
 #include <stdio.h>
 #include <opencv2/core/core.hpp>

@@ -1,6 +1,3 @@
-//CSCI574 HW5
-//Ahmet Can Ozbek
-//8401860152
 #ifndef __CSCI574HW5__auxFunctions__
 #define __CSCI574HW5__auxFunctions__
 
