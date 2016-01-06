@@ -1,0 +1,1 @@
+ Using the perspective transformation and imaging geometry to capture a scene (a cube) in the 3D world coordinates system and project it onto a 2D image plane.
