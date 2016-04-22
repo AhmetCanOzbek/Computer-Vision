@@ -1,1 +1,1 @@
-![alt tag](https://github.com/a-ozbek/Computer-Vision/tree/master/Parking%20Space%20Classification/result.png)
+![alt tag](https://github.com/a-ozbek/Computer-Vision/blob/master/Parking%20Space%20Classification/result.png)
